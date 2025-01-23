@@ -23,7 +23,6 @@ body {
     background: var(--bg-color);
     padding: 0 10px;
     color: var(--text-color);
-    overflow: hidden; /* Prevent scrolling on small screens */
 }
 
 /* Wrapper Box */
@@ -78,6 +77,15 @@ body {
     color: var(--text-color);
 }
 
+.typing-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typing-text::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
 .typing-text p {
     font-size: 18px;
     text-align: justify;
@@ -99,8 +107,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%; /* Adjusted for responsiveness */
+    width: 45%;
     margin-bottom: 10px;
+}
+
+.result-details li p {
+    font-size: 14px;
+    color: #a8a8a8;
+    margin-bottom: 5px;
+}
+
+.result-details li span {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
 }
 
 /* Button Styling */
@@ -137,6 +157,20 @@ button:hover {
 #live-display {
     white-space: pre-wrap; /* Preserve spaces and line breaks */
     word-wrap: break-word;
+}
+
+.correct {
+    color: #4caf50; /* Green for correct characters */
+}
+
+.incorrect {
+    color: #f44336; /* Red for incorrect characters */
+}
+
+.red-underline {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
 }
 
 /* Media Queries for Responsiveness */
