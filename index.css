@@ -23,16 +23,22 @@ body {
     background: var(--bg-color);
     padding: 0 10px;
     color: var(--text-color);
+    overflow: hidden; /* Prevent scrolling on small screens */
 }
 
 /* Wrapper Box */
 .wrapper {
-    width: 700px;
-    padding: 30px;
+    width: 100%;
+    max-width: 1200px; /* Max width for larger screens */
+    padding: 20px;
     background: var(--bg-color);
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 2px solid var(--main-color);
+    display: flex; /* Flexbox layout */
+    flex-direction: column;
+    align-items: stretch; /* Stretch the content */
+    justify-content: space-between;
 }
 
 /* Input Field */
@@ -54,12 +60,14 @@ body {
 
 /* Content Box */
 .content-box {
-    width: 100%;
+    width: 100%; /* Take up full width */
     padding: 20px;
     border-radius: 10px;
     border: 4px solid var(--main-color);
     background: #262b34;
     color: var(--text-color);
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack items vertically */
 }
 
 /* Typing Text Styling */
@@ -68,15 +76,6 @@ body {
     overflow-y: auto;
     margin-bottom: 20px;
     color: var(--text-color);
-}
-
-.typing-text::-webkit-scrollbar {
-    width: 5px;
-}
-
-.typing-text::-webkit-scrollbar-thumb {
-    background: var(--main-color);
-    border-radius: 5px;
 }
 
 .typing-text p {
@@ -100,20 +99,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%;
+    width: 45%; /* Adjusted for responsiveness */
     margin-bottom: 10px;
-}
-
-.result-details li p {
-    font-size: 14px;
-    color: #a8a8a8;
-    margin-bottom: 5px;
-}
-
-.result-details li span {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--text-color);
 }
 
 /* Button Styling */
@@ -152,42 +139,77 @@ button:hover {
     word-wrap: break-word;
 }
 
-.correct {
-    color: #4caf50; /* Green for correct characters */
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 90%; /* Shrink wrapper size */
+    }
+
+    .content-box {
+        width: 100%; /* Full width for small screens */
+    }
 }
 
-.incorrect {
-    color: #f44336; /* Red for incorrect characters */
-}
-
-.red-underline {
-    text-decoration: underline;
-    text-decoration-color: red;
-    text-decoration-thickness: 2px;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .wrapper {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 15px;
+    }
+
+    .content-box {
         width: 100%;
-        padding: 20px;
+        margin-top: 20px;
     }
 
     .result-details li {
-        width: 100%;
+        width: 100%; /* Make each result detail full-width */
+        margin-bottom: 10px;
     }
 }
+
 @media (max-width: 500px) {
     .wrapper {
-        background-color: #0ef;
-        width: 50%;
-        margin: 40px auto;
+        width: 90%; /* Shrink further */
         padding: 10px;
-        font-size: 14px;
-        height: 40vh;
-    }  
-    .content{
-        height: 60vh;
+    }
 
-    } 
+    .input-field {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .live-output {
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+
+    button {
+        width: 100%; /* Make the button take full width */
+        font-size: 14px;
+    }
+
+    .result-details li {
+        width: 100%; /* Full width for result details on small screens */
+    }
+
+    .typing-text p {
+        font-size: 14px; /* Reduce font size for better fitting */
+    }
+}
+
+@media (max-width: 300px) {
+    .wrapper {
+        width: 95%; /* Ensure the wrapper stays inside the screen */
+        padding: 5px;
+    }
+
+    .input-field, .live-output, button {
+        font-size: 12px; /* Reduce font size for very small screens */
+    }
+
+    .content-box {
+        padding: 10px; /* Less padding on very small screens */
+    }
+
+    .result-details li {
+        font-size: 12px; /* Smaller text for result details */
+    }
 }
