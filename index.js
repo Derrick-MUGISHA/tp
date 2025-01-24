@@ -123,6 +123,24 @@ function showResults() {
     - Words Per Minute (WPM): ${wpmTag.innerText}
     - Characters Per Minute (CPM): ${cpmTag.innerText}
     - Total Mistakes: ${mistakeTag.innerText}`);
+
+
+    // document.getElementById("celebration-wpm").innerText = wpm;
+    // document.getElementById("celebration-cpm").innerText = cpm;
+    // document.getElementById("celebration-mistakes").innerText = mistakes;
+
+    
+    // if (wpmTag.innerText > 20) {
+    //     // Show celebration modal
+    //     document.getElementById("celebration-modal").style.display = "block";
+    // } else {
+    //     // Show failure modal
+    //     document.getElementById("failure-modal").style.display = "block";
+        
+    //     // Enable the "Try Again" button in the failure modal or main content
+    //     document.getElementById("reset-button").style.display = "block"; // Assuming you have a reset button
+    // }
+
 }
 
 function resetGame() {

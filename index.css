@@ -176,6 +176,76 @@ button:hover {
     text-decoration-thickness: 2px;
 }
 
+/* Modal Styling */
+.celebration-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    z-index: 1000; /* Make sure it's above all other content */
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.modal-content {
+    background: #1f242d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+.modal-content {
+    width: 80%; /* Modal width */
+    max-width: 400px; /* Optional: max width */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Modal overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed on screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999; /* Ensure it's on top */
+    display: flex; /* Flexbox centering */
+}
+
+/* Confetti Style (Optional, for celebration) */
+#confetti {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    background: url('https://cdn.pixabay.com/photo/2016/12/15/14/37/confetti-1900763_960_720.png') repeat-x;
+    background-size: 20px 20px;
+    animation: confettiAnimation 2s linear infinite;
+}
+
+/* Confetti Animation */
+@keyframes confettiAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .wrapper {
@@ -215,7 +285,8 @@ button:hover {
     }
 
     .live-output {
-        font-size: 16px; /* Adjust font size for better readability */
+        font-size: 16px;
+        display: none; /* Adjust font size for better readability */
     }
 
     button {
